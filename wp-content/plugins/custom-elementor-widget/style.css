@@ -1,0 +1,33 @@
+.custom-text-with-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.custom-text-with-line .text {
+    font-family: 'Lora', serif;
+    font-size: 48px;
+    font-style: italic;
+    font-weight: 700;
+    text-align: center;
+    line-height: 30px;
+}
+
+.custom-text-with-line .line {
+    flex-grow: 1;
+    height: 1px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.custom-text-with-line .custom-button {
+    display: inline-block;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.custom-text-with-line .custom-button:hover {
+    background-color: #005bb5;
+}

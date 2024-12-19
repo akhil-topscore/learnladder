@@ -1,0 +1,198 @@
+.nes-news-scroll-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 20px;
+    width: 100%;
+    height: 400px; /* Add a fixed height */
+    overflow-y: auto; /* Enable scrolling for the container itself */
+}
+
+.nes-news-title-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #406D95;
+    padding: 14px 0 14px 66px;
+    color: #ffffff;
+    font-weight: bold;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    max-height: 60px;
+}
+
+.nes-news-title-wrap h2 {
+    font-family: 'Lora', serif;
+    font-size: 36px;
+    font-style: italic;
+    font-weight: 700;
+    line-height: 40px;
+    text-align: left;
+    margin: 0;
+    flex: 1;
+    color:white;
+}
+
+.nes-news-scroll {
+    border: 1px solid #3F6B95;
+    border-radius: 0 0 15px 15px;
+    overflow-y: auto;
+    height: 400px; /* Set fixed height to ensure scrolling */
+    position: relative;
+    padding-right: 15px;
+    word-wrap: break-word;
+}
+
+.nes-news-item {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    font-size: 14px;
+    color: #333;
+    max-width: 100%;
+}
+
+.nes-news-item i {
+    color: #ff5722;
+    margin-left: 30px; /* Added margin-left for the icon */
+    font-size: 40px;
+    font-family: 'Roboto', sans-serif; /* Updated font family */
+    margin-bottom: 4px;
+}
+
+.nes-news-item p {
+    margin-left: 30px;
+    margin-bottom: 0;
+    word-wrap: break-word; /* Ensures text breaks onto the next line */
+    max-width: 100%;
+    font-family: 'Roboto', sans-serif; /* Updated font family */
+}
+
+.nes-news-item .nes-new-gif {
+    color: #0066cc;
+    font-weight: bold;
+    align-self: center;
+    margin-left: 28px;
+    font-family: 'Roboto', sans-serif; /* Updated font family */
+}
+
+/* Bold styling for new news items */
+.nes-news-item-new p {
+    font-weight: 500;
+    color: #000; /* Adjust as needed for better contrast */
+    font-family: 'Roboto', sans-serif; /* Updated font family */
+}
+
+/* Adjust GIF position */
+.nes-news-item-new .nes-new-gif {
+    margin-left: 15px;
+    max-height: 24px; /* Scale the GIF as necessary */
+    vertical-align: middle;
+    font-family: 'Roboto', sans-serif; /* Updated font family */
+}
+
+
+/* General Scrollbar Styling for WebKit Browsers (Chrome, Brave, Safari, Edge) */
+.nes-news-scroll::-webkit-scrollbar {
+    width: 10px; /* Adjust scrollbar width */
+    height: 10px; /* Adjust scrollbar height for horizontal scrollbars */
+}
+
+.nes-news-scroll::-webkit-scrollbar-track {
+    background-color: transparent; /* Scrollbar track color */
+}
+
+.nes-news-scroll::-webkit-scrollbar-thumb {
+    background-color: #3F6B95; /* Scrollbar thumb color */
+    border-radius: 5px; /* Round edges */
+    border: 2px solid transparent; /* Padding around thumb */
+    background-clip: content-box; /* Prevent thumb background overflow */
+}
+
+/* General Scrollbar Styling for Firefox */
+.nes-news-scroll {
+    scrollbar-width: thin; /* Thin scrollbar */
+    scrollbar-color: #3F6B95 transparent; /* Thumb and track colors */
+}
+
+/* Consistent Styling for Edge Cases (Fallback for Older Browsers) */
+.nes-news-scroll {
+    overflow: auto; /* Ensure scrolling works */
+}
+
+/* Optional: Styling for Horizontal Scrollbars */
+.nes-news-scroll::-webkit-scrollbar-horizontal {
+    height: 10px; /* Adjust height for horizontal scrollbars */
+}
+
+.nes-news-scroll::-webkit-scrollbar-thumb:horizontal {
+    background-color: #3F6B95; /* Same color for horizontal thumb */
+    border-radius: 5px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .nes-news-title-wrap {
+        padding: 15px;
+    }
+
+    .nes-news-title-wrap h2 {
+        font-size: 28px;
+        line-height: 32px;
+        color: white;
+    }
+
+    .nes-news-item {
+        font-size: 12px;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nes-news-scroll-container {
+        padding: 0; /* Remove padding */
+        width: 100%; /* Full width */
+    }
+
+    .nes-news-title-wrap {
+        padding: 10px;
+    }
+
+    .nes-news-title-wrap h2 {
+        font-size: 24px;
+        line-height: 28px;
+        color: white;
+    }
+
+    .nes-news-item {
+        font-size: 10px;
+        padding: 6px;
+        width: 100%; /* Full width for news items */
+        margin-left: 0; /* No left margin */
+        margin-right: 0; /* No right margin */
+    }
+
+    .nes-news-item i {
+        color: #ff5722;
+        margin-left: 0;
+        font-size: 40px;
+    }
+
+    .nes-news-item p {
+        max-width: 100%; /* Ensure full width for text in mobile view */
+        word-wrap: break-word; /* Break the text into multiple lines */
+    }
+}
+
+.nes-news-item a{
+    display: inline-flex;
+  align-items: center;
+}
+
+.nes-news-item p:hover{
+    
+    color:#5078a0;
+    font-weight:500;
+}

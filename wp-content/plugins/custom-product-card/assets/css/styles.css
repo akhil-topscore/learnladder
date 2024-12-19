@@ -1,0 +1,117 @@
+.custom-product-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.custom-product-card-item {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 5px;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.custom-product-card-item:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+
+.custom-product-image img {
+    width: 100%; 
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+}
+
+.custom-product-title {
+    font-size: 1.2em;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.custom-product-description {
+    font-size: 0.9em;
+    color: #555;
+    margin: 10px 0;
+    overflow-wrap: break-word;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.custom-product-price {
+    display: flex;
+    justify-content: start;
+    margin-top: 15px;
+}
+
+.custom-current-price {
+    font-size: 1.1em;
+    color: #e74c3c;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.custom-product-card-item .custom-product-price .custom-reduced-price {
+    text-decoration: line-through;
+    color: #8b8b8b;
+    margin-left: 10px;
+    margin-right: 5px;
+    font-size: 0.8rem;
+}
+
+.custom-product-card-item::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.price-cart-cont {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 0 10px;
+}
+
+/* Tooltip delay on hover for desktop only */
+.custom-product-add-to-cart .add-to-cart-icon[title] {
+    position: relative;
+}
+
+.custom-product-add-to-cart .add-to-cart-icon[title]::after {
+    content: attr(title);
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.75);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out 1000s; /*1000sec oru adjustment aanu*/
+}
+
+/* Show tooltip on hover with delay */
+.custom-product-add-to-cart .add-to-cart-icon:hover[title]::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Disable tooltip on mobile and tablet */
+@media (max-width: 768px) {
+    .custom-product-add-to-cart .add-to-cart-icon[title]::after {
+        display: none;
+    }
+}

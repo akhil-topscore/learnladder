@@ -1,0 +1,328 @@
+/* Apply Poppins font to the entire dropdown */
+.spcs-category-dropdown {
+    font-family: 'Poppins', sans-serif;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    padding: 0;
+    max-width: 100%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+/* Header styling */
+.spcs-category-heading {
+    background-color: #3f6b95;
+    padding: 6px;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 0;
+    border-bottom: 1px solid #ddd;
+    color: white;
+    margin: 0;
+    cursor: pointer; /* Indicate clickable */
+}
+
+/* Top-level categories */
+.spcs-category-dropdown ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Style for each category item */
+.spcs-category-dropdown ul li {
+    background: #ea6a2b63;
+    border-top: 1px solid #ddd;
+    padding: 5px;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.spcs-category-item.has-children{
+    background:#ff540075;
+}
+
+/* Remove border for the first item */
+.spcs-category-item.has-children ul li:first-child {
+    border-top: none;
+    background:transparent;
+}
+
+/* Style for category link */
+.spcs-category-dropdown ul li a {
+    text-decoration: none;
+    color: #333;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+/* Move the dropdown arrow to the left of the category name */
+.spcs-category-dropdown ul li .spcs-child-indicator {
+    font-size: 16px;
+    color: #555;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+/* Arrow toggle animation */
+.spcs-category-dropdown ul li.expanded .spcs-child-indicator {
+    transform: rotate(-180deg);
+}
+
+/* Hover effect */
+.spcs-category-dropdown ul li a:hover {
+    font-weight: bold;
+    background-color: transparent;
+    transform: scale(1.05);  /* Slight scale effect */
+}
+
+/* Child categories - styling */
+.spcs-category-dropdown ul li ul {
+    display: none; /* Initially hidden */
+    margin-top: 0;
+    padding-left: 10px;
+    background-color: transparent;  /* Light background for child categories */
+}
+
+/* Style for subcategories */
+.spcs-category-dropdown ul li ul li {
+    border: none;
+    padding: 5px 0;
+}
+
+.spcs-category-dropdown ul li ul li a {
+    font-size: 13px;
+    color: #555;
+    padding-left: 20px;  /* Indentation for subcategories */
+}
+
+/* Subcategory hover effect */
+.spcs-category-dropdown ul li ul li a:hover {
+    font-weight: bold;
+   
+}
+
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .spcs-category-dropdown .spcs-category-list {
+        display: none; /* Hide by default on mobile */
+    }
+
+    .spcs-category-dropdown .spcs-category-heading {
+        display: block;
+    }
+
+    /* Show the category filter when the heading is clicked */
+    .spcs-category-dropdown .spcs-category-list.show {
+        display: block !important; /* Show when toggled */
+    }
+
+    /* Adjust padding and font sizes on mobile */
+    .spcs-category-dropdown ul li {
+        padding: 8px;
+    }
+
+    .spcs-category-heading {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .spcs-category-dropdown ul li a {
+        font-size: 12px;
+    }
+
+    .spcs-category-dropdown ul li ul {
+        padding-left: 15px;
+    }
+
+    .spcs-category-dropdown ul li.expanded .spcs-child-indicator {
+        font-size: 14px;
+    }
+}
+
+/* Sorting dropdown container */
+.spcs-sorting-dropdown {
+    font-family: 'Poppins', sans-serif;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    margin-top: 20px;
+    background-color: #f8f8f8;
+    text-align: center;
+}
+
+/* Sorting dropdown heading */
+.spcs-sorting-heading {
+    padding: 6px;
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: white;
+  background-color: #3f6b95;
+  margin: 0;
+  cursor: pointer;
+}
+
+/* Sorting dropdown select box */
+.spcs-sorting-select {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+}
+
+/* Hover effect */
+.spcs-sorting-select:hover {
+    border-color: #aaa;
+}
+
+/* Toggle visibility for category list */
+.spcs-category-list {
+    display: block; /* Default display on desktop/tablet */
+}
+
+.spcs-category-list.show {
+    display: none !important; /* Show when toggled */
+}
+
+/* Subcategory list toggle */
+.spcs-subcategory-list {
+    display: none; /* Initially hidden */
+}
+
+.spcs-category-item.expanded .spcs-subcategory-list {
+    display: block; /* Show expanded subcategories */
+}
+
+/* Sorting dropdown options list */
+.spcs-sorting-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: none;
+    text-align: left;
+}
+
+.spcs-sorting-list.expanded{
+    display:block !important;
+}
+/* Sorting list items */
+.spcs-sorting-list li {
+    border-top: 1px solid #ddd;
+    padding: 5px;
+    cursor: pointer;
+    background: #f1bfa6;
+}
+
+/* Hover effect for sorting items */
+.spcs-sorting-list li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+    padding: 5px;
+    font-size: 14px;
+}
+
+/* Hover effect */
+.spcs-sorting-list li a:hover {
+    font-weight: bold;
+    transform: scale(1.05);
+}
+
+/* Responsive styles for sorting */
+@media (max-width: 768px) {
+    /* Show the sorting options dropdown when clicked */
+    .spcs-sorting-dropdown.show .spcs-sorting-list {
+        display: block;
+    }
+
+    .spcs-sorting-dropdown select {
+        display: block; /* Ensure the dropdown is visible when focused */
+    }
+
+    /* Hide the arrow icon when interacting with the select */
+    .spcs-sorting-heading::after {
+        content: ''; /* Remove the arrow when directly opening the dropdown */
+    }
+}
+
+/* Shared Dropdown Styles */
+.spcs-dropdown {
+    font-family: 'Poppins', sans-serif;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+/* Header */
+.spcs-heading {
+    background-color: #f8f8f8;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Chevron Icon */
+.spcs-heading i {
+    font-size: 14px;
+    transition: transform 0.3s ease;
+}
+
+/* Expand Rotation */
+.spcs-dropdown.expanded .spcs-heading i {
+    transform: rotate(-180deg);
+}
+
+/* List */
+.spcs-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: none;
+    background-color: #f9f9f9;
+}
+
+/* Show List */
+.spcs-list.show {
+    display: block;
+}
+
+/* List Item */
+.spcs-list li {
+    border-top: 1px solid #ddd;
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* Link */
+.spcs-list li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+}
+
+/* Hover */
+.spcs-list li a:hover {
+    background-color: #f0f0f0;
+    font-weight: bold;
+}
+.spcs-category-link.non-selectable {
+    pointer-events: none;
+    cursor: default;
+    color: gray;
+}
